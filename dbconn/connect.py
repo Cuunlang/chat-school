@@ -1,8 +1,8 @@
 from sqlalchemy.orm import sessionmaker
 from configparser import ConfigParser
-from table import Student,Board,Dashboard,Comment,Teacher,Chatbot,Attachment,Problem,Timetable,Memo,LearningProgress
+from models import Student,Board,Dashboard,Comment,Teacher,Chatbot,Attachment,Problem,Timetable,Memo
 from sqlalchemy import create_engine,text
-from table import Base
+from models import Base
 from tabulate import tabulate
 from sqlalchemy_utils import database_exists, create_database
 class MySQLConnector:
