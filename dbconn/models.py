@@ -94,6 +94,7 @@ class Problem(Base):
 
     문제_id = Column(Integer, primary_key=True, autoincrement=True)
     대시보드 = Column(Integer, ForeignKey('대시보드.대시보드_key'))
+    시험_id=Column(Integer, ForeignKey('대시보드.대시보드_key'))
     유형 = Column(String(255))
     문제질문 = Column(String(255))
     문제내용 = Column(Text)
@@ -110,6 +111,15 @@ class Problem(Base):
     빈칸3의정답 = Column(String(50))
     빈칸4의정답 = Column(String(50))
     빈칸5의정답 = Column(String(50))
+
+class test(Base):
+    __tablename__ = '시험'
+
+    시험_id = Column(Integer, primary_key=True, autoincrement=True)
+    대시보드_key = Column(Integer,ForeignKey('대시보드.대시보드_key'))
+    시간 = Column(Date)
+    
+
 #######################################################
 class Emotion(Base):
     __tablename__ = '감정'
