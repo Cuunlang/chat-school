@@ -3,7 +3,6 @@ from configparser import ConfigParser
 from models import Student, Board, Dashboard, Comment, Teacher, Chat, Attachment, Choice,Short_answer,Long_answer, Test,Emotion, Timetable, S_memo, T_memo, Assignment,Assignment_attachment,Submission,Submission_attachment ,Chatbot
 from sqlalchemy import create_engine,text
 from models import Base
-from tabulate import tabulate
 from sqlalchemy_utils import database_exists, create_database
 class MySQLConnector:
     def __init__(self, config):
