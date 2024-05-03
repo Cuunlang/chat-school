@@ -1,7 +1,9 @@
 pip install pymysql
 pip install sqlalchemy
 
-pip install mysql-connector-python/ ctest퀴리용
+pip install mysql-connector-python
+pip install sqlalchemy
+
 
 app.ini에서 사용할 db정리
 
@@ -9,3 +11,4 @@ python connect.py시 db와 테이블생성
 
 사용 예시는 test.py에 정리
 
+설치된 라이브러리는 requirement.txt에서 정리
