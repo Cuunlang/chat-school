@@ -33,6 +33,7 @@ class Student(Base):
     chat = relationship("Chat", cascade="all, delete-orphan")
     submission = relationship("Submission", cascade="all, delete-orphan")
     s_Memo= relationship("S_Memo", cascade="all, delete-orphan")
+    score= relationship("Score")
 
 class S_memo(Base):
     __tablename__ = '학생_메모장'
@@ -127,7 +128,6 @@ class Assignment(Base):
     __tablename__ = '과제'
 
     과제_ID = Column(Integer, primary_key=True, autoincrement=True)
-    제출자_ID = Column(Integer, ForeignKey('선생.선생_ID'))
     대시보드 = Column(Integer, ForeignKey('대시보드.대시보드_key'))
     주차 = Column(Integer)
     제목 = Column(String(25))
@@ -175,6 +175,19 @@ class Test(Base):
     대시보드_key = Column(Integer, ForeignKey('대시보드.대시보드_key'))
     문제_순서= Column(Integer)
     시간 = Column(Date)
+
+    choice = relationship("Choice", cascade="all, delete-orphan")
+    Long_answer = relationship("Long_answer", cascade="all, delete-orphan")
+    lhort_answer = relationship("Short_answer", cascade="all, delete-orphan")
+    score = relationship("Score", cascade="all, delete-orphan")
+
+class Score(Base):
+    __tablename__ = '점수'
+
+    점수_ID = Column(Integer, primary_key=True, autoincrement=True)
+    시험_ID=Column(Integer, ForeignKey('시험.시험_ID'))
+    학생_ID=Column(Integer, ForeignKey('학생.학생_ID'))
+    점수=Column(Integer)
 
 class Choice(Base):
     __tablename__ = '객관식'
